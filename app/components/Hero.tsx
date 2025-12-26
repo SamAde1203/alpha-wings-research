@@ -1,8 +1,10 @@
+import Image from 'next/image'; // Optional if you switch to Next/Image later
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-navy to-navy/90">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 opacity-20"
         style={{
           backgroundImage: "url('/images/academic-research.jpg')",
@@ -13,14 +15,14 @@ export default function Hero() {
 
       {/* Dark gradient overlay at top for logo visibility */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent pointer-events-none" />
-      
+
       {/* Content */}
       <div className="container relative z-10 text-center text-white py-20">
-        {/* Logo with subtle drop shadow for extra visibility */}
+        {/* Logo */}
         <div className="mb-8 flex justify-center">
-          <img 
-            src="/logo.png" 
-            alt="Alpha Wings Research" 
+          <img
+            src="/logo.png"
+            alt="Alpha Wings Research"
             className="h-32 w-auto drop-shadow-2xl"
           />
         </div>
@@ -35,14 +37,13 @@ export default function Hero() {
         <p className="text-xl md:text-2xl mb-4 max-w-3xl mx-auto leading-relaxed">
           Transform scattered research into a God-honoring 10 year career strategy.
         </p>
-
         <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto text-gray-200">
           Get a personalized research roadmap, strategic hypothesis portfolio, and actionable next steps in just 2 weeks.
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a 
+        {/* CTA Buttons - All three now properly inside the flex container */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <a
             href="https://calendly.com/alpha-wings/discovery-call-research-strategy-intensive"
             target="_blank"
             rel="noopener noreferrer"
@@ -50,8 +51,8 @@ export default function Hero() {
           >
             Book Your Free Discovery Call
           </a>
-            {/* NEW: Free GPT Button */}
-          <a 
+
+          <a
             href="https://chatgpt.com/g/g-694edf7c148c8191bdb8cd918525ee4e-christian-research-roadmap-generator"
             target="_blank"
             rel="noopener noreferrer"
@@ -59,10 +60,10 @@ export default function Hero() {
           >
             🎁 Try Free Roadmap Generator
           </a>
-        </div>
-          <a 
-            href="#how-it-works" 
-            className="bg-white text-navy px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg border-2 border-white"
+
+          <a
+            href="#how-it-works"
+            className="bg-transparent text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all transform hover:scale-105 shadow-lg border-2 border-white backdrop-blur-sm"
           >
             See How It Works
           </a>
@@ -79,5 +80,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
