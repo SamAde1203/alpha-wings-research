@@ -12,6 +12,7 @@
     "@types/node": "20.10.5",
     "@types/react": "18.2.45",
     "@types/react-dom": "18.2.18",
+    "@vercel/analytics": "^1.6.1",
     "next": "^16.1.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
