@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Private & Secure Files
+private/
+docs/
+scripts/
+.env*
+*.pdf
+*invoice*
+*contract*
