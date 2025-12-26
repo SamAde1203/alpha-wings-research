@@ -8,7 +8,7 @@ export default function FAQ() {
     },
     {
       q: "What if I'm in a niche field?",
-      a: "The framework works across all theological and biblical studies disciplines—systematic theology, biblical studies, church history, practical theology, ethics, and more. I tailor everything to your specific field."
+      a: "The framework works across all theological and biblical studies disciplines systematic theology, biblical studies, church history, practical theology, ethics, and more. I tailor everything to your specific field."
     },
     {
       q: "How much time do I need to invest?",
@@ -16,7 +16,7 @@ export default function FAQ() {
     },
     {
       q: "What if I don't have publications yet?",
-      a: "That's perfect—we'll design your publication strategy from scratch. Early career academics often benefit most because we can build the right trajectory from the beginning."
+      a: "That's perfect we'll design your publication strategy from scratch. Early career academics often benefit most because we can build the right trajectory from the beginning."
     },
     {
       q: "Will this work if I'm bivocational (pastor + academic)?",
@@ -28,7 +28,7 @@ export default function FAQ() {
     },
     {
       q: "Can I pay in installments?",
-      a: "Yes—I offer 50% now and 50% at delivery if that helps. Just mention it on the discovery call."
+      a: "Yes I offer 50% now and 50% at delivery if that helps. Just mention it on the discovery call."
     },
     {
       q: "What happens after the intensive?",
