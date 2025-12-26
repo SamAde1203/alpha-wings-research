@@ -6,6 +6,24 @@ import Pricing from './components/Pricing'
 import FAQ from './components/FAQ'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
+import FreeTools from './components/FreeTools'
+
+export default function Home() {
+  return (
+    <main>
+      <Hero />
+      <Problem />
+      <Solution />
+      <FreeTools /> {/* NEW */}
+      <HowItWorks />
+      <Pricing />
+      <FAQ />
+      <CTA />
+      <Footer />
+    </main>
+  )
+}
+
 
 export default function Home() {
   return (

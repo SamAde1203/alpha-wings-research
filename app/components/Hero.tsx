@@ -50,7 +50,16 @@ export default function Hero() {
           >
             Book Your Free Discovery Call
           </a>
-          
+            {/* NEW: Free GPT Button */}
+          <a 
+            href="https://chatgpt.com/g/g-694edf7c148c8191bdb8cd918525ee4e-christian-research-roadmap-generator"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-navy px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg border-2 border-gold flex items-center gap-2"
+          >
+            🎁 Try Free Roadmap Generator
+          </a>
+        </div>
           <a 
             href="#how-it-works" 
             className="bg-white text-navy px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg border-2 border-white"
