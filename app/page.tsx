@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       <Problem />
       <Solution />
-      <FreeTools /> {/* NEW */}
+      <FreeTools /> 
       <HowItWorks />
       <Pricing />
       <FAQ />
@@ -25,17 +25,3 @@ export default function Home() {
 }
 
 
-export default function Home() {
-  return (
-    <main>
-      <Hero />
-      <Problem />
-      <Solution />
-      <HowItWorks />
-      <Pricing />
-      <FAQ />
-      <CTA />
-      <Footer />
-    </main>
-  )
-}
