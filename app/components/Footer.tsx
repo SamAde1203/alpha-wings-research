@@ -42,7 +42,7 @@ export default function Footer() {
               Email: info@alphawingsresearch.com
             </p>
             <p className="text-gray-300">
-              Based in Nigeria • Serving Christian academics worldwide
+              Based in United Kingdom • Serving Christian academics worldwide
             </p>
           </div>
         </div>

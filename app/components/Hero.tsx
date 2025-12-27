@@ -1,5 +1,3 @@
-import Image from 'next/image'; // Optional if you switch to Next/Image later
-
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-navy to-navy/90">
@@ -41,17 +39,8 @@ export default function Hero() {
           Get a personalized research roadmap, strategic hypothesis portfolio, and actionable next steps in just 2 weeks.
         </p>
 
-        {/* CTA Buttons - All three now properly inside the flex container */}
+        {/* CTA Buttons - FIXED: Removed duplicate */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          <a
-            href="https://calendly.com/alpha-wings/discovery-call-research-strategy-intensive"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gold text-navy px-8 py-4 rounded-lg font-bold text-lg hover:bg-gold/90 transition-all transform hover:scale-105 shadow-lg"
-          >
-            Book Your Free Discovery Call
-          </a>
-
           <a
             href="https://chatgpt.com/g/g-694edf7c148c8191bdb8cd918525ee4e-christian-research-roadmap-generator"
             target="_blank"
