@@ -8,7 +8,8 @@ import FAQ from './components/FAQ';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 
-export default function Home() {  
+// Rename to avoid duplicate Home export conflict
+export default function LandingPage() {
   return (
     <main>
       <Hero />
