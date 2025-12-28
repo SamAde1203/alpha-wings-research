@@ -182,10 +182,9 @@ export default function AcceleratorSection() {
               <p className="text-xs text-gold-400 mt-4 font-bold">
                 ⚡ Only 5 founding scholar spots left
               </p>
-			  {/* ADD THIS: */}
-			 <p className="text-xs text-white/80 mt-2 font-medium">
-			   🔒 100% satisfaction guarantee
-			   </p>
+              <p className="text-xs text-white/80 mt-2 font-medium">
+                🔒 100% satisfaction guarantee
+              </p>
             </div>
           </div>
         </div>
