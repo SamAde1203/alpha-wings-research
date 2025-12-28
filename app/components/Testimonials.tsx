@@ -1,17 +1,40 @@
-// components/Testimonials.jsx
+// components/Testimonials.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
 
+// Define the type for testimonials
+type TestimonialType = {
+  id: number;
+  name: string;
+  title: string;
+  credential: string;
+  image: string;
+  content: string;
+  stats: string;
+  badge: string;
+  color: string;
+};
+
+// Define the type for the testimonials object
+type TestimonialsMap = {
+  visibility: TestimonialType[];
+  strategy: TestimonialType[];
+  tools: TestimonialType[];
+};
+
+// Define the type for activeTab
+type TabKey = 'visibility' | 'strategy' | 'tools';
+
 export default function Testimonials() {
-  const [activeTab, setActiveTab] = useState('visibility');
+  const [activeTab, setActiveTab] = useState<TabKey>('visibility');
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     setAnimate(true);
   }, []);
 
-  const testimonials = {
+  const testimonials: TestimonialsMap = {
     visibility: [
       {
         id: 1,
@@ -130,11 +153,11 @@ export default function Testimonials() {
 
         {/* Tab Navigation - GOLD active, white inactive */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {[
+          {([
             { key: 'visibility', label: 'Visibility Boost', icon: '📊' },
             { key: 'strategy', label: 'Strategic Clarity', icon: '🎯' },
             { key: 'tools', label: 'Tool Success', icon: '⚡' }
-          ].map((tab) => (
+          ] as {key: TabKey, label: string, icon: string}[]).map((tab) => (
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
@@ -149,7 +172,7 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Testimonials Grid */}
+        {/* Testimonials Grid - FIXED THIS LINE */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {testimonials[activeTab].map((testimonial, index) => (
             <div 
