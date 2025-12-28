@@ -176,12 +176,16 @@ export default function AcceleratorSection() {
                 onClick={() => trackAcceleratorClick('full-intensive', 'accelerator-section')}
                 className="block w-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-900 font-bold py-4 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl"
               >
-                Book Discovery Call
+                🔒 Secure Founding Scholar Spot
               </a>
               
               <p className="text-xs text-gold-400 mt-4 font-bold">
                 ⚡ Only 5 founding scholar spots left
               </p>
+			  {/* ADD THIS: */}
+			 <p className="text-xs text-white/80 mt-2 font-medium">
+			   🔒 100% satisfaction guarantee
+			   </p>
             </div>
           </div>
         </div>
