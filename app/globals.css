@@ -1,94 +1,311 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Crimson+Pro:wght@400;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Custom scrollbar */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #C9A961 #1e3a5f;
+/* ============================================
+   CUSTOM VARIABLES FOR BETTER CONSISTENCY
+   ============================================ */
+:root {
+  /* Color Palette */
+  --navy-900: #0f1c2e;
+  --navy-800: #1a2942;
+  --navy-700: #2C3E5F;
+  --gold-500: #C9A961;
+  --gold-600: #B8964D;
+  --gold-400: #d4ba7a;
+  
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Crimson Pro', Georgia, serif;
 }
 
-*::-webkit-scrollbar {
-  width: 12px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #1e3a5f;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #C9A961;
-  border-radius: 6px;
-  border: 3px solid #1e3a5f;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary);
   color: #1A1A1A;
   background: #ffffff;
+  line-height: 1.6;
+  font-weight: 400; /* Set base weight, not !important */
 }
 
+/* ============================================
+   TYPOGRAPHY IMPROVEMENTS
+   ============================================ */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Crimson Pro', serif;
-  font-weight: 600;
+  font-family: var(--font-display);
   line-height: 1.2;
+  color: #0f1c2e;
+  letter-spacing: -0.02em;
+  font-weight: 700; /* Not !important */
 }
 
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+}
+
+p {
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* Strong text should be bolder */
+strong, b {
+  font-weight: 700;
+}
+
+/* ============================================
+   CONTAINER
+   ============================================ */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
+/* ============================================
+   BUTTON STYLES - IMPROVED CONTRAST
+   ============================================ */
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
+  border-radius: 0.75rem;
+  font-weight: 600; /* Changed from 700 to allow overrides */
+  font-size: 1rem;
   text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-primary {
-  background: #C9A961;
-  color: #ffffff;
-  border: 2px solid #C9A961;
+  background: var(--gold-500);
+  color: var(--navy-900);
+  border-color: var(--gold-500);
+  box-shadow: 0 4px 14px rgba(201, 169, 97, 0.3);
 }
 
 .btn-primary:hover {
-  background: #B8964D;
-  border-color: #B8964D;
+  background: var(--gold-600);
+  border-color: var(--gold-600);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+  box-shadow: 0 6px 20px rgba(201, 169, 97, 0.4);
 }
 
 .btn-secondary {
   background: transparent;
-  color: #2C3E5F;
-  border: 2px solid #2C3E5F;
+  color: var(--navy-900);
+  border: 2px solid var(--navy-700);
 }
 
 .btn-secondary:hover {
-  background: #2C3E5F;
+  background: var(--navy-900);
   color: #ffffff;
+  border-color: var(--navy-900);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(15, 28, 46, 0.3);
 }
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-500) var(--navy-800);
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--navy-800);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--gold-500);
+  border-radius: 6px;
+  border: 3px solid var(--navy-800);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--gold-600);
+}
+
+/* ============================================
+   TEXT CONTRAST IMPROVEMENTS - REMOVED !important
+   ============================================ */
+
+/* White text on dark backgrounds */
+.text-white {
+  color: #ffffff;
+}
+
+/* Gray text should be readable */
+.text-gray-300 {
+  color: #d1d5db;
+}
+
+.text-gray-400 {
+  color: #9ca3af;
+}
+
+/* Gold text */
+.text-gold-500 {
+  color: var(--gold-500);
+}
+
+/* Navy text on light backgrounds */
+.text-navy-900 {
+  color: var(--navy-900);
+}
+
+.text-navy-700 {
+  color: var(--navy-700);
+}
+
+/* ============================================
+   BACKGROUND IMPROVEMENTS
+   ============================================ */
+
+/* Dark backgrounds need proper contrast */
+.bg-navy-900 {
+  background-color: var(--navy-900);
+}
+
+.bg-navy-800 {
+  background-color: var(--navy-800);
+}
+
+/* ============================================
+   PRICING CARD SPECIFIC FIXES
+   ============================================ */
+
+/* For pricing cards specifically */
+.pricing-accelerator {
+  background: linear-gradient(135deg, var(--gold-500) 0%, var(--gold-600) 100%);
+}
+
+/* ============================================
+   FOCUS STATES FOR ACCESSIBILITY
+   ============================================ */
+
+*:focus-visible {
+  outline: 2px solid var(--gold-500);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--gold-500);
+  outline-offset: 4px;
+}
+
+/* ============================================
+   RESPONSIVE TYPOGRAPHY
+   ============================================ */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* ============================================
+   DARK/LIGHT SECTION CONTEXT - REMOVED !important
+   ============================================ */
+
+/* DARK SECTIONS - White headings */
+section.bg-navy-900 h1,
+section.bg-navy-900 h2,
+section.bg-navy-900 h3 {
+  color: #ffffff;
+}
+
+/* LIGHT SECTIONS - Dark headings */
+section.bg-white h1,
+section.bg-white h2,
+section.bg-white h3 {
+  color: #0f1c2e;
+}
+
+/* ============================================
+   ANIMATION SMOOTHING
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   REMOVED THE PROBLEMATIC !important RULES BELOW
+   ============================================ */
+
+/* DELETE ALL OF THIS FROM YOUR CSS: */
+
+/*
+p, li, span, div {
+  font-weight: 500 !important;  <- DELETE
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700 !important;  <- DELETE
+}
+
+.text-white {
+  color: #ffffff !important;  <- DELETE
+}
+
+button, .btn {
+  font-weight: 700 !important;  <- DELETE
+}
+*/

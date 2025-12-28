@@ -7,6 +7,9 @@ import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
+import AcceleratorSection from './components/AcceleratorSection';
+import Testimonials from './components/Testimonials';
+
 
 // Rename to avoid duplicate Home export conflict
 export default function LandingPage() {
@@ -17,6 +20,8 @@ export default function LandingPage() {
       <Solution />
       <FreeTools />
       <HowItWorks />
+	  <AcceleratorSection/>
+      <Testimonials />
       <Pricing />
       <FAQ />
       <CTA />
