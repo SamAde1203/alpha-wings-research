@@ -168,8 +168,8 @@ export default function Footer() {
               <Link href="/rescue" className="text-gold-400 hover:text-gold-300 font-bold">
                 Rescue Packages
               </Link>
-              <a href="#" className="hover:text-gold-400 transition">Privacy Policy</a>
-              <a href="#" className="hover:text-gold-400 transition">Terms</a>
+              <a href="/privacy" className="hover:text-gold-400 transition">Privacy Policy</a>
+              <a href="/terms" className="hover:text-gold-400 transition">Terms</a>
               <a href="#faq" className="hover:text-gold-400 transition">FAQ</a>
               <span>© {new Date().getFullYear()} Alpha Wings Research</span>
             </div>
