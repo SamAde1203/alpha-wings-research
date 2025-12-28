@@ -1,11 +1,11 @@
-// components/AcceleratorSection.jsx
+// app/components/AcceleratorSection.tsx
 'use client';
 
 export default function AcceleratorSection() {
   // Simple tracking function (you can enhance this with actual analytics later)
-  const trackAcceleratorClick = (tier, location) => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'accelerator_click', {
+  const trackAcceleratorClick = (tier: string, location: string) => { // ADD THESE TYPES
+    if (typeof window !== 'undefined' && (window as any).gtag) { // FIX THIS LINE
+      (window as any).gtag('event', 'accelerator_click', {
         tier: tier,
         location: location
       });
