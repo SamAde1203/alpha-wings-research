@@ -289,4 +289,4 @@ export default function Testimonials() {
       </div>
     </section>
   );
-}
+}// Build trigger
