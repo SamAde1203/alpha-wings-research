@@ -1,4 +1,6 @@
 //app/components/Footer.tsx
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="bg-navy-900 text-white pt-16 pb-8">
@@ -16,58 +18,72 @@ export default function Footer() {
               Empowering Christian scholars to build influential, purpose-driven academic careers 
               through strategic research planning and faith-integrated methodology.
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-3">
+              <Link 
+                href="/rescue"
+                className="inline-flex items-center bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 px-4 py-3 rounded-lg font-bold text-sm hover:from-gold-600 hover:to-gold-700 transition-all shadow-lg hover:shadow-xl"
+              >
+                <span className="mr-2">🔥</span>
+                Emergency Rescue Packages
+              </Link>
               <a 
                 href="https://chatgpt.com/g/g-694edf7c148c8191bdb8cd918525ee4e-christian-research-roadmap-generator"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center bg-gold-500 text-navy-900 px-4 py-2 rounded-lg font-bold text-sm hover:bg-gold-600 transition-all"
+                className="inline-flex items-center bg-white/10 text-white px-4 py-3 rounded-lg font-bold text-sm hover:bg-white/20 transition-all border border-white/30"
               >
                 <span className="mr-2">🤖</span>
                 Free AI Generator
               </a>
-              <a 
-                href="mailto:contact@alphawingsresearch.com"
-                className="inline-flex items-center border-2 border-white/30 text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-white/10 transition-all"
-              >
-                <span className="mr-2">✉️</span>
-                Email Us
-              </a>
             </div>
           </div>
 
-          {/* Services */}
+          {/* Services - UPDATED WITH RESCUE */}
           <div>
             <h3 className="text-xl font-bold mb-6 text-white border-b border-gold-500/30 pb-2">
               Our Services
             </h3>
             <ul className="space-y-3">
               {[
-                { text: "Research Strategy Intensive", href: "#solution" },
-                { text: "Academic Visibility Acceleration", href: "#accelerator" },
-                { text: "Grant Proposal Strategy", href: "#services" },
-                { text: "Publication Roadmapping", href: "#solution" },
-                { text: "Career Trajectory Planning", href: "#solution" },
+                { text: "🔥 Emergency Rescue Packages", href: "/rescue", highlight: true },
+                { text: "Research Strategy Intensive", href: "/#solution" },
+                { text: "Academic Visibility Acceleration", href: "/#accelerator" },
+                { text: "Grant Proposal Strategy", href: "/#services" },
+                { text: "Publication Roadmapping", href: "/#solution" },
               ].map((item, index) => (
                 <li key={index}>
-                  <a 
+                  <Link 
                     href={item.href}
-                    className="text-white/70 hover:text-gold-400 transition-all hover:translate-x-1 inline-flex items-center"
+                    className={`${item.highlight ? 'text-gold-400 font-bold' : 'text-white/70'} hover:text-gold-300 transition-all hover:translate-x-1 inline-flex items-center`}
                   >
-                    <span className="mr-2">→</span>
+                    <span className="mr-2">{item.highlight ? '⚡' : '→'}</span>
                     {item.text}
-                  </a>
+                    {item.highlight && (
+                      <span className="ml-2 text-xs bg-red-500 text-white px-2 py-0.5 rounded-full">
+                        3 Left
+                      </span>
+                    )}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Connect */}
+          {/* Connect - UPDATED */}
           <div>
             <h3 className="text-xl font-bold mb-6 text-white border-b border-gold-500/30 pb-2">
               Connect With Us
             </h3>
             <ul className="space-y-3 mb-6">
+              <li>
+                <Link 
+                  href="/rescue"
+                  className="text-gold-400 hover:text-gold-300 transition-all hover:translate-x-1 inline-flex items-center font-bold"
+                >
+                  <span className="mr-2">🔥</span>
+                  View Emergency Packages
+                </Link>
+              </li>
               <li>
                 <a 
                   href="https://calendly.com/alpha-wings/discovery-call-research-strategy-intensive"
@@ -130,34 +146,52 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-white/20 my-8"></div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar - UPDATED WITH RESCUE LINK */}
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <p className="text-white/60 text-sm">
               Serving Christian academics, theologians, and researchers worldwide since 2024
             </p>
+            <div className="mt-3">
+              <Link 
+                href="/rescue" 
+                className="text-gold-400 hover:text-gold-300 text-sm font-bold inline-flex items-center"
+              >
+                <span className="mr-1">🔥</span>
+                Limited Emergency Packages Available
+              </Link>
+            </div>
           </div>
           
           <div className="text-right">
             <div className="flex flex-wrap justify-end gap-6 text-sm text-white/60">
+              <Link href="/rescue" className="text-gold-400 hover:text-gold-300 font-bold">
+                Rescue Packages
+              </Link>
               <a href="#" className="hover:text-gold-400 transition">Privacy Policy</a>
-              <a href="#" className="hover:text-gold-400 transition">Terms of Service</a>
+              <a href="#" className="hover:text-gold-400 transition">Terms</a>
               <a href="#faq" className="hover:text-gold-400 transition">FAQ</a>
               <span>© {new Date().getFullYear()} Alpha Wings Research</span>
             </div>
           </div>
         </div>
 
-        {/* Academic Badge */}
+        {/* Academic Badge - FIXED TYPO */}
         <div className="text-center mt-8 pt-8 border-t border-white/10">
           <div className="inline-flex items-center gap-2 text-white/50 text-sm">
             <span>🎓</span>
-            <span>Research-Backed Methodology • Faith-Integrated Approach Approach</span>
+            <span>Research-Backed Methodology • Faith-Integrated Approach</span>
             <span>✝️</span>
           </div>
           <p className="text-white/40 text-xs mt-2">
             Helping Christian scholars publish, teach, and lead with excellence
           </p>
+          {/* Rescue Package Notice */}
+          <div className="mt-4">
+            <p className="text-gold-400/70 text-xs">
+              ⚡ Emergency Rescue Packages: $497 • 48-hour turnaround • Limited spots
+            </p>
+          </div>
         </div>
       </div>
     </footer>

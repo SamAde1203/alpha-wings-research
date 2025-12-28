@@ -486,56 +486,79 @@ export default function RescuePage() {
       </h2>
 
       <div className="flex flex-col md:flex-row items-center gap-10">
-        {/* Founder Image */}
+        {/* Founder Image - SIMPLIFIED WITHOUT onError */}
         <div className="md:w-1/3">
-          <div className="relative rounded-2xl overflow-hidden border-4 border-gold-500 shadow-2xl">
+          <div className="relative rounded-2xl overflow-hidden border-4 border-gold-500 shadow-2xl bg-gradient-to-br from-gold-500/20 to-navy-900/50">
+            {/* Fallback content that shows if image fails */}
+            <div className="absolute inset-0 flex items-center justify-center z-0">
+              <div className="text-center p-6">
+                <div className="text-6xl mb-4">🎓</div>
+                <p className="text-white font-bold text-lg">Rev. Sam Adeyemi</p>
+                <p className="text-white/80">Founder</p>
+              </div>
+            </div>
+            
+            {/* Image with fallback via CSS */}
             <Image
               src="/images/rescue/rescue-founder.jpg"
               alt="Rev. Sam Adeyemi – Founder of Alpha Wings Research"
               width={400}
               height={500}
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover relative z-10 hover:scale-105 transition-transform duration-300"
               priority
             />
           </div>
         </div>
 
-        {/* Founder Content */}
+        {/* Founder Content - IMPROVED CONTRAST */}
         <div className="md:w-2/3">
-          <h3 className="text-2xl md:text-3xl font-semibold mb-3">
+          <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white drop-shadow-sm">
             Rev. Sam Adeyemi
           </h3>
 
-          <p className="text-gold-400 font-medium mb-6">
+          <p className="text-gold-300 font-semibold mb-6 text-lg tracking-wide">
             Founder, Alpha Wings Research
           </p>
 
-          <p className="text-lg text-gray-200 mb-5 leading-relaxed">
+          <p className="text-xl text-white/95 mb-6 leading-relaxed font-medium">
             I help Christian scholars build strategic, publishable research programmes
             that honour God and advance their academic fields.
           </p>
 
-          <ul className="space-y-3 text-gray-300 mb-6">
-            <li>• PhD-track researcher focused on historical theology, theological ethics, and applied scholarship</li>
-            <li>• Experienced in journal-oriented writing, long-form research development, and project design</li>
-            <li>• Builder of initiatives that bridge the Church, the academy, and public life</li>
-            <li>• Helped scholars move from scattered ideas to coherent, submission-ready research trajectories</li>
+          <ul className="space-y-4 text-white/90 mb-8">
+            <li className="flex items-start">
+              <span className="text-gold-400 mr-3 text-xl">•</span>
+              <span className="font-medium">PhD-track researcher focused on historical theology, theological ethics, and applied scholarship</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-gold-400 mr-3 text-xl">•</span>
+              <span className="font-medium">Experienced in journal-oriented writing, long-form research development, and project design</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-gold-400 mr-3 text-xl">•</span>
+              <span className="font-medium">Builder of initiatives that bridge the Church, the academy, and public life</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-gold-400 mr-3 text-xl">•</span>
+              <span className="font-medium">Helped scholars move from scattered ideas to coherent, submission-ready research trajectories</span>
+            </li>
           </ul>
 
-          <p className="text-gray-200 leading-relaxed">
-            I understand the tension Christian academics face honouring divine calling while meeting
-            institutional expectations, pursuing rigorous scholarship while remaining faithful to the Church.
-            <br />
-            <br />
-            Alpha Wings Research exists to help you integrate vocation, intellectual depth, and strategic clarity 
-            so your work bears lasting fruit in both the academy and the Kingdom.
-          </p>
+          <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm p-6 rounded-xl border border-gold-500/30">
+            <p className="text-white/95 leading-relaxed">
+              I understand the tension Christian academics face honouring divine calling while meeting
+              institutional expectations, pursuing rigorous scholarship while remaining faithful to the Church.
+              <br />
+              <br />
+              <strong className="text-gold-300">Alpha Wings Research exists to help you integrate vocation, intellectual depth, and strategic clarity 
+              so your work bears lasting fruit in both the academy and the Kingdom.</strong>
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 
       {/* ===== FINAL CTA SECTION ===== */}
       <section className="py-20 bg-white">
